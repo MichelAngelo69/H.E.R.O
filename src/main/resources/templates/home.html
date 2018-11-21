@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="heroes.css">
+    <title>Home</title>
+</head>
+<body>
+<header>
+<h>Welcome to H.E.R.O.</h>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="/addHero" method="post">
+                <div class="form-group">
+                    <label>Log in hero</label>
+                    <input type="text" name="login" class="form-control" placeholder="login">
+
+                    <input type="text" name="pass" class="form-control" placeholder="password">
+                    <button type="submit" class="btn btn-lg btn-primary btn-animated">Log in H.E.R.O</button>
+                </div>
+            </form>
+            <form>
+            <div class="form-group">
+                    <a href="/addHero" class="btn btn-danger btn-lg btn-block" role="button">Add your H.E.R.O</a>
+                <a href="/allHeroes" class="btn btn-success btn-lg btn-block" role="button">Summon your H.E.R.O</a>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

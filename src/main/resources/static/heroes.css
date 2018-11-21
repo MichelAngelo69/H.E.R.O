@@ -1,0 +1,22 @@
+body{
+    background-image: url("heroes.jpg");
+    background-attachment: fixed;
+    background-position: center;
+}
+header{
+    font-size: 40px;
+    text-align: center;
+        color:  yellow;
+}
+label{
+    color: crimson;
+}
+
+.elo{
+    float: right;
+}
+.ziom{text-align: center
+}
+.well{
+    background: rgba(255,255,255,0.5);
+}

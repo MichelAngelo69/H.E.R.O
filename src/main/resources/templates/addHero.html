@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="addHero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Add your Hero</title>
+</head>
+<body>
+<header>
+<h>Create a H.E.R.O. account</h>
+</header>
+<div class="container">
+    <a href="/home" class="btn btn-success" role="button"><i class="fab fa-fort-awesome"></i></a>
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="/heroes" method="post">
+                <div class="form-group">
+                    <label>Human name:</label>
+                    <input type="text" name="heroHumanName" class="form-control" placeholder="Human name" required>
+                    <label>Human surname:</label>
+                    <input type="text" name="HeroHumanSurname" class="form-control" placeholder="Human surname" required>
+                    <label>Hero fullname:</label>
+                    <input type="text" name="heroFullName" class="form-control" placeholder="Hero fullname" required>
+                    <label>Hero phone number:</label>
+                    <input type="number" name="phoneNumber" class="form-control" placeholder="+YY-XXX-XXX-XXX"  required>
+                      <!--     pattern="+48 [0-9]{3}-[0-9]{3}-[0-9]{3}"-->
+                          
+                    <label>Hero e-mail:</label>
+                    <input type="text" name="email" class="form-control" placeholder="Hero e-mail" required>
+                    
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-animated">Dodaj</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="footer">
+
+    <div class="container">
+
+        <footer>
+
+            <span sec:authorize="isAuthenticated()">
+                | Logged user: <span sec:authentication="name"></span> |
+                Roles: <span sec:authentication="principal.authorities"></span> |
+                <a th:href="@{/logout}">Sign Out</a>
+            </span>
+
+            <script type="text/javascript"
+                    src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        </footer>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

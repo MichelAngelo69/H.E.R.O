@@ -1,0 +1,13 @@
+body{
+    background-image: url("deadpool.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+}
+header{
+    font-size: 40px;
+    text-align: center;
+    color:  yellow;
+}
+label{
+    color: lawngreen;
+}
