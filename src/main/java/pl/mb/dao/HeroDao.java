@@ -5,3 +5,4 @@ import pl.mb.model.Hero;
 
 public interface HeroDao extends CrudRepository<Hero, Long> {
 }
+

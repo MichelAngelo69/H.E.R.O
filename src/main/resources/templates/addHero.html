@@ -38,7 +38,7 @@
                     <input type="text" name="email" class="form-control" placeholder="Hero e-mail" required>
                     
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary btn-animated">Dodaj</button>
+                <button type="submit" class="btn btn-lg btn-primary btn-animated">Add</button>
             </form>
         </div>
     </div>
@@ -50,9 +50,9 @@
 
         <footer>
 
-            <span sec:authorize="isAuthenticated()">
-                | Logged user: <span sec:authentication="name"></span> |
-                Roles: <span sec:authentication="principal.authorities"></span> |
+            <span sec:auth="isAuthenticated()">
+                | Logged user: <span sec:auth="name"></span> |
+                Roles: <span sec:auth="principal.authorities"></span> |
                 <a th:href="@{/logout}">Sign Out</a>
             </span>
 

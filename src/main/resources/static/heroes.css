@@ -15,8 +15,17 @@ label{
 .elo{
     float: right;
 }
+.elo2{
+    float: right;
+    float: bottom;
+}
 .ziom{text-align: center
 }
 .well{
     background: rgba(255,255,255,0.5);
+}
+.headd{
+    font-size: 40px;
+    color: crimson;
+    text-align: center;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet"
@@ -34,6 +34,18 @@
         </div>
     </div>
 </div>
+<footer>
+
+            <span sec:auth="isAuthenticated()">
+                | Logged user: <span sec:auth="name"></span> |
+                Roles: <span sec:auth="principal.authorities"></span> |
+                <a th:href="@{/logout}">Sign Out</a>
+            </span>
+
+    <script type="text/javascript"
+            src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</footer>
 
 </body>
 </html>

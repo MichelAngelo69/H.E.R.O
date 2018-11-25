@@ -9,6 +9,7 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/heroes.css">
     <title>One Hero</title>
@@ -24,11 +25,54 @@
             <label>Human surname:</label> <p th:text="${hero.heroHumanSurname}"/>
          <!--   <label>Phone number:</label><p th:text="${pokazuj.phoneNumber}"/>  -->
             <label>E-mail:</label><p th:text="${hero.email}"/>
+          <a th:href="@{'/delete/' + ${hero.id}}" class="btn btn-danger btn-lg elo2"  role="button">Delete Hero</a>
 
         </div>
     </div>
 </div>
 </div>
 
-</body>
-</html>
+<div class="container">
+    <h3>Add Comment</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="/addComment" method="post">
+                <input type="hidden" name="hero" th:value="${hero.id}">
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" class="form-control" name="author">
+                </div>
+                <textarea name="cont" class="form-control" rows="5"
+                          placeholder="Put in a comment content"></textarea>
+                <button type="submit" class="btn btn-lg btn-primary btn-animated">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+<p th:if="${message}" th:text="${message}" style="color: green"/>
+<!-- <div class="container bootstrap snippets">-->
+    <h3 class="headd">Comments</h3>
+
+    <div class="container">
+        <div class="well">
+            <div class="media">
+                <div class="media-body">
+                    <div th:each="comment: ${hero.comms}">
+        <div class="row">
+                             <div class="col-md-12">
+                                  <h5 th:text="${comment.author}"/>
+                                  <p th:text="${comment.cont}"/>
+
+                                  ---------------------------------------------------------------------------------------------------------------------------------
+
+                              </div>
+                          </div>
+
+                      </div>
+                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </body>
+                  </html>

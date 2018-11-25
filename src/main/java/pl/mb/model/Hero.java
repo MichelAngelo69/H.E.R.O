@@ -2,10 +2,7 @@ package pl.mb.model;
 
 import pl.mb.dao.HeroDao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +30,17 @@ public class Hero {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.specialPower = specialPower;
+    }
+
+    @OneToMany(mappedBy = "hero")
+    private List<Comment> comms = new ArrayList<>();
+
+    public List<Comment> getComms() {
+        return comms;
+    }
+
+    public void setComms(List<Comment> comms) {
+        this.comms = comms;
     }
 
     public String getSpecialPower() {

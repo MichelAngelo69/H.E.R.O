@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
 
@@ -20,7 +20,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <form action="/addHero" method="post">
+          <!--   <form action="/addHero" method="get">
                 <div class="form-group">
                     <label>Log in hero</label>
                     <input type="text" name="login" class="form-control" placeholder="login">
@@ -28,7 +28,7 @@
                     <input type="text" name="pass" class="form-control" placeholder="password">
                     <button type="submit" class="btn btn-lg btn-primary btn-animated">Log in H.E.R.O</button>
                 </div>
-            </form>
+            </form>--><a href="/login" class="btn btn-success" role="button">Login Page</i></a>
             <form>
             <div class="form-group">
                     <a href="/addHero" class="btn btn-danger btn-lg btn-block" role="button">Add your H.E.R.O</a>
@@ -39,6 +39,19 @@
             </form>
         </div>
     </div>
+
+    <span sec:auth="isAuthenticated()">
+                | Logged user: <span sec:auth="name"></span> |
+                Roles: <span sec:auth="principal.authorities"></span> |
+                <a th:href="@{/logout}">Sign Out</a>
+            </span>
+
+    <script type="text/javascript"
+            src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </div>
+<footer>
+
+
+</footer>
 </body>
 </html>
